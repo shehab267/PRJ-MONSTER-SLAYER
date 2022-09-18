@@ -1,4 +1,3 @@
 # PRJ-MONSTER-SLAYER
 
 Vue Project
-"# PRJ-MONSTER-SLAYER" 
