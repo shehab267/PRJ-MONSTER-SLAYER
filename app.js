@@ -8,6 +8,7 @@ function randomNum(min, max) {
 const app = Vue.createApp({
   data() {
     return {
+      roundCounter: 0,
       playerHealth: 100,
       monsterHealth: 100,
     };
@@ -19,18 +20,27 @@ const app = Vue.createApp({
     monsterStyleBar() {
       return { width: this.monsterHealth + "%" };
     },
+    usingSpecialAttack() {
+      return this.roundCounter % 3 !== 0;
+    },
   },
   methods: {
     playerAttack() {
       const attackValue = randomNum(5, 12);
       this.monsterHealth -= attackValue;
       this.monsterAttack();
-      console.log(`Monster Health: ${this.monsterHealth}`);
+      this.roundCounter++;
     },
     monsterAttack() {
       const attackValue = randomNum(8, 15);
       this.playerHealth -= attackValue;
       console.log(`Player Health: ${this.playerHealth}`);
+    },
+    spcialAttack() {
+      const attackValue = randomNum(10, 25);
+      this.monsterHealth -= attackValue;
+      this.monsterAttack();
+      this.roundCounter++;
     },
   },
 });
