@@ -3,7 +3,7 @@
 }
 
 html {
-  font-family: 'Jost', sans-serif;
+  font-family: "Jost", sans-serif;
 }
 
 body {
@@ -100,10 +100,17 @@ button:disabled {
 
 #log li {
   margin: 0.5rem 0;
+  /* font-weight: 500; */
 }
 
+.log--player,
+.log--monster,
+.log--damage,
+.log--heal {
+  font-weight: 600;
+}
 .log--player {
-  color: #7700ff;
+  color: #341c85c0;
 }
 
 .log--monster {
